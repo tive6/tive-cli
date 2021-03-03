@@ -1,7 +1,7 @@
 {
   "name": "tive-cli",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "基于vue脚手架的npm模板工具",
   "main": "index.js",
   "bin": {
     "tive": "bin/tive.js",
@@ -11,9 +11,11 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
+    "tive-cli",
     "tive",
     "cli",
     "vue",
+    "vite",
     "vant",
     "scaffold",
     "template",

@@ -1,2 +1,3 @@
 # tive-cli
-tive-cli 模板工具
+
+基于vue脚手架的npm模板工具
