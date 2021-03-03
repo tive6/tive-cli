@@ -1,14 +1,17 @@
 {
   "name": "tive-cli",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "基于vue脚手架的npm模板工具",
-  "main": "index.js",
   "bin": {
     "tive": "bin/tive.js",
     "tive-create": "bin/tive-create.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:zm-1006/tive-cli.git"
   },
   "keywords": [
     "tive-cli",
@@ -21,8 +24,8 @@
     "template",
     "demo"
   ],
-  "author": "",
-  "license": "ISC",
+  "author": "zmer",
+  "license": "MIT",
   "devDependencies": {
     "chalk": "^4.1.0",
     "commander": "^7.1.0",
