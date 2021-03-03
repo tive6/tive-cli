@@ -18,7 +18,7 @@ $ tive create <project-name>
 ```
 $ tive create my-project
 
-$ tive create dir/my-project
+$ tive create .     # 当前目录生成
 ```
 
 ### 基本命令
