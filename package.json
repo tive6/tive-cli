@@ -1,6 +1,6 @@
 {
   "name": "tive-cli",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "基于vue脚手架的npm模板工具",
   "bin": {
     "tive": "bin/tive.js",
@@ -26,17 +26,26 @@
   ],
   "author": "zmer",
   "license": "MIT",
-  "devDependencies": {
+  "dependencies": {
     "chalk": "^4.1.0",
     "commander": "^7.1.0",
     "copy": "^0.3.2",
     "download-git-repo": "^3.0.2",
     "inquirer": "^8.0.0",
     "ora": "^5.3.0",
+    "pacote": "^11.2.7",
     "rimraf": "^3.0.2",
     "shell": "^0.8.3",
     "shelljs": "^0.8.4",
     "spinner": "^0.3.4",
     "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@npmcli/run-script": "^1.8.3",
+    "make-fetch-happen": "^8.0.14",
+    "npm-package-arg": "^8.1.1",
+    "npm-pick-manifest": "^6.1.0",
+    "npm-registry-fetch": "^9.0.0",
+    "puka": "^1.0.1"
   }
 }
