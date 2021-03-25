@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+"use strict";
 
 const path = require('path')
 const fs = require('fs')
@@ -13,6 +14,7 @@ const shell = require('shelljs')
 const chalk = require('chalk')
 const copy = require('copy')
 const log = require('../src/log')
+const checkVersion = require('../src/check-version')
 
 const program = new Command()
 program
@@ -134,6 +136,8 @@ function downloadAndGenerate (template) {
             log.success(`   npm install`)
             log.success(`   npm start`)
             // `files` is an array of the files that were copied
+            // tive-cli 版本检测
+            checkVersion()
         })
     })
 }
