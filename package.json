@@ -1,6 +1,6 @@
 {
   "name": "tive-cli",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "基于vue脚手架的npm模板工具",
   "bin": {
     "tive": "bin/tive.js",
