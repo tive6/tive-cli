@@ -11,15 +11,19 @@ module.exports = function () {
         // console.log(res)
         let latest = res.version
         let isLatest = semver.lt(version, latest)
-        console.log(isLatest)
-        if (!isLatest) {
-            log.tips('************ CLI upgrade reminder ************')
-            log.tips('*'+chalk.blue('  tive-cli有新的版本.                       ')+'*')
+        // console.log(isLatest)
+        if (isLatest) {
+            log.tips()
+            log.tips('**********************************************')
+            log.tips('*                                            *')
+            log.tips('*'+chalk.blue('  tive-cli 有新的版本.                      ')+'*')
             log.tips('*                                            *')
             log.tips(`*  最新版本:       ${chalk.green(latest)}                     *`)
             log.tips(`*  当前版本:       ${chalk.red(version)}                     *`)
             log.tips(`*  升级成最新:     ${chalk.green('npm install -g tive-cli')}   *`)
-            log.tips('************ CLI upgrade reminder ************')
+            log.tips('*                                            *')
+            log.tips('**********************************************')
+            log.tips()
         }
     }).catch(() => null)
 }
