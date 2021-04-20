@@ -86,11 +86,11 @@ function selectTemplate () {
         choices: [
             {
                 name: 'vue2.0+VantUI移动端Demo',
-                value: 'zm-1006/tive-vue2-mobile-demo',
+                value: 'tive6/tive-vue2-mobile-demo',
             },
             {
                 name: 'vue3.0+vite2+VantUI移动端Demo',
-                value: 'zm-1006/tive-vue3-vite-demo',
+                value: 'tive6/tive-vue3-vite-demo',
             },
             // new inquirer.Separator(),
         ],

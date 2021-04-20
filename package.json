@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:zm-1006/tive-cli.git"
+    "url": "git@github.com:tive6/tive-cli.git"
   },
   "keywords": [
     "tive-cli",
@@ -24,7 +24,7 @@
     "template",
     "demo"
   ],
-  "author": "zmer",
+  "author": "tive",
   "license": "MIT",
   "dependencies": {
     "chalk": "^4.1.0",
