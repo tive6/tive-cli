@@ -15,14 +15,14 @@ program
     .parse(process.argv)
 
 const options = program.opts()
-console.log(options)
-const args = program.args
-console.log(args)
-
-if (options.help ||  args.length === 0) {
+// console.log(options)
+// const args = program.args
+// console.log(args)
+if (options.help ||  !options.branch) {
     program.help()
 }
-
+// console.log('next')
+// process.exit(1)
 if (options && options.target) {
     merge(options)
 } else {
