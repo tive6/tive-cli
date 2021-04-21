@@ -7,16 +7,21 @@ const { push, merge } = require('../src/git-handler')
 const program = new Command()
 program
     .name('tive git')
-    .usage('<项目名称> [tive-demo]')
-    .option('-b, --branch <type>', 'current branch', 'master')
+    // .usage('<command> [options]')
+    .option('-b, --branch <type>', 'current branch')
     .option('-t, --target <type>', 'merged branch')
     .option('-m, --commit <type>', 'commit description')
     .option('-h, --help', 'view help information')
-program.parse();
+    .parse(process.argv)
+
 const options = program.opts()
-// console.log(options)
+console.log(options)
 const args = program.args
-// console.log(args)
+console.log(args)
+
+if (options.help ||  args.length === 0) {
+    program.help()
+}
 
 if (options && options.target) {
     merge(options)
