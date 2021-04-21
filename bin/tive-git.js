@@ -9,8 +9,8 @@ program
     .name('tive git')
     // .usage('<项目名称> [tive-demo]')
     .option('-b, --branch <type>', 'current branch', 'master')
-    .option('-t, --target <type>', 'merged branch', 'dev')
-    .option('-m, --commit <type>', 'commit description', 'merge')
+    .option('-t, --target <type>', 'merged branch')
+    .option('-m, --commit <type>', 'commit description')
     .option('-h, --help', 'view help information')
 program.parse();
 const options = program.opts()
