@@ -19,8 +19,8 @@ const checkVersion = require('../src/check-version')
 const program = new Command()
 program
     .name('tive create')
-    .usage('<项目名称> [tive-demo]')
-    .option('-tpl, --template', 'select template', 'vue2.0')
+    .usage('<projectName> [tive-demo]')
+    .option('-tpl, --template <type>', 'select template. ls: vue2.0 / vue3.0')
     .option('-h, --help', 'view help information')
     .parse(process.argv)
 
@@ -39,9 +39,29 @@ if (args && args.length > 0) {
 }
 const projectPath = path.join(process.cwd(), projectName)
 // console.log('projectName: %s', projectName)
+const gitUrlMap = {
+    'vue2.0': 'tive6/tive-vue2-mobile-demo',
+    'vue3.0': 'tive6/tive-vue3-vite-demo',
+}
 let template = ''
 
 checkProjectPath()
+
+/*
+* 检查是否有模板参数
+* */
+function checkTemplateParam () {
+    if (options && options.template) {
+        let tpl = options.template
+        if (!Object.keys(gitUrlMap).includes(tpl)) {
+            log.error("error: '-tpl --template' option no match")
+        }
+        template = gitUrlMap[tpl]
+        downloadAndGenerate(template)
+    } else {
+        selectTemplate()
+    }
+}
 
 /*
 * 检查文件目录
@@ -63,12 +83,12 @@ async function checkProjectPath () {
                 // rm(projectPath)
                 // spinner.succeed()
                 // log.tips()
-                selectTemplate()
+                checkTemplateParam()
             } else {
                 process.exit(1)
             }
         } else {
-            selectTemplate()
+            checkTemplateParam()
         }
     } catch (e) {
         log.error(e)
@@ -95,7 +115,7 @@ function selectTemplate () {
             // new inquirer.Separator(),
         ],
     }]).then(res => {
-        // console.log(res)
+        console.log(res)
         template = res.tel
         downloadAndGenerate(template)
     })
