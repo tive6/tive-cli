@@ -1,5 +1,7 @@
+const chalk = require('chalk');
 const ExecAsync = require('../src/exec-async')
-
+const log = require('./log')
+let time = Date.now()
 /*
 * git push
 * */
@@ -13,9 +15,9 @@ exports.push = (data) => {
     }).then(res=>{
         return ExecAsync(`git push origin ${data.branch}`)
     }).catch(err => {
-        console.log(err)
+        // console.log(err)
     }).finally(()=>{
-        console.log('End of shell script!')
+        console.log(`\n${chalk.bgGreen(' DONE ')} ${chalk.green(`End of shell script in ${getTime()}ms`)}`)
     })
 }
 
@@ -42,6 +44,11 @@ exports.merge = (data) => {
     }).catch(err => {
         console.log(err)
     }).finally(()=>{
-        console.log('End of shell script!')
+        console.log(`${chalk.bgGreen(' DONE ')} ${chalk.green(`End of shell script in ${getTime()}ms`)}`)
     })
+}
+
+
+function getTime() {
+    return Date.now() - time
 }
