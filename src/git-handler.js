@@ -4,7 +4,7 @@ const ExecAsync = require('../src/exec-async')
 // const log = require('./log')
 const time = Date.now()
 const spinner = ora({
-    text: `${chalk.bgWhiteBright(' Doing ... ')}`,
+    text: `${chalk.cyan.bgYellowBright(' Doing ... ')}`,
     color: "green",
 })
 /*

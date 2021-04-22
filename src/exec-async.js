@@ -6,23 +6,20 @@ const execAsync = (command)=>{
         exec(command, {silent: true}, (code, output, err) => {
             if (code !== 0) {
                 console.log(chalk.red(`
-${chalk.redBright(`┍-------------------- ${command} --------------------┑`)}
-
-【command】=> \t${chalk.underline.magentaBright(command)} (失败)
-【code】=> \t${chalk.magentaBright(code)}
-【output】=> \n${chalk.redBright(err)}
+${chalk.redBright(`┍-------------------- ${command} --------------------┑`)}\n
+[command]=> \t${chalk.underline.magentaBright(command)} (失败)
+[code]=> \t${chalk.magentaBright(code)}
+[output]=> \n${chalk.redBright(err)}
 ${chalk.redBright(`┕-------------------- ${command} --------------------┙`)}`))
                 reject(0)
                 // exit(1)
             } else {
                 console.log(chalk.cyan(`
-${chalk.cyanBright(`┍-------------------- ${command} --------------------┑`)}
-
-【command】=> \t${chalk.underline.green(command)} (成功)
-【code】=> \t${chalk.green(code)}
-【output】=> \n${chalk.cyanBright(output)}
+${chalk.cyanBright(`┍-------------------- ${command} --------------------┑`)}\n
+[command]=> \t${chalk.underline.green(command)} (成功)
+[code]=> \t${chalk.green(code)}
+[output]=> \n${chalk.cyanBright(output)}
 ${chalk.cyanBright(`┕-------------------- ${command} --------------------┙`)}`))
-                // console.log('「﹁﹂」『﹃﹄』┌┐└┘┍┑┕┙')
                 resolve(1)
             }
         })
