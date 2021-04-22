@@ -8,8 +8,8 @@ const execAsync = (command)=>{
                 console.log(chalk.red(`
 ${chalk.redBright(`┍-------------------- ${command} --------------------┑`)}
 
-【command】=> \t${chalk.underline.magenta(command)} (失败)
-【code】=> \t${chalk.magenta(code)}
+【command】=> \t${chalk.underline.magentaBright(command)} (失败)
+【code】=> \t${chalk.magentaBright(code)}
 【output】=> \n${chalk.redBright(err)}
 ${chalk.redBright(`┕-------------------- ${command} --------------------┙`)}`))
                 reject(0)
