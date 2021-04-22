@@ -25,7 +25,7 @@ exports.push = (data) => {
         spinner.text = `${chalk.red.bgWhite(' Run failed ')}`
         spinner.fail();
     }).finally(()=>{
-        spinner.text = `${chalk.greenBright.bgCyan(' Run succeed ')}`
+        spinner.text = `${chalk.greenBright.bgCyan(' Run successfully ')}`
         spinner.succeed()
         console.log(`\n${chalk.bgGreen(' DONE ')} ${chalk.green(`End of shell script in ${getTime()}ms`)}`)
     })
@@ -57,7 +57,7 @@ exports.merge = (data) => {
         spinner.text = `${chalk.red.bgWhite(' Run failed ')}`
         spinner.fail();
     }).finally(()=>{
-        spinner.text = `${chalk.greenBright.bgCyan(' Run succeed ')}`
+        spinner.text = `${chalk.greenBright.bgCyan(' Run successfully ')}`
         spinner.succeed()
         console.log(`${chalk.bgGreen(' DONE ')} ${chalk.green(`End of shell script in ${getTime()}ms`)}`)
     })
