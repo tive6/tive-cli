@@ -4,7 +4,8 @@
   "description": "基于vue脚手架的npm模板工具",
   "bin": {
     "tive": "bin/tive.js",
-    "tive-create": "bin/tive-create.js"
+    "tive-create": "bin/tive-create.js",
+    "tive-git": "bin/tive-git.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -17,6 +18,9 @@
     "tive-cli",
     "tive",
     "cli",
+    "git",
+    "push",
+    "merge",
     "vue",
     "vite",
     "vant",
