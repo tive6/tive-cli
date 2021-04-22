@@ -3,13 +3,13 @@
   "version": "1.1.0",
   "description": "基于node和npm的命令行工具集",
   "bin": {
-    "tive": "bin/tive.js",
-    "tive-create": "bin/tive-create.js",
-    "tive-git": "bin/tive-git.js"
+    "tive": "bin/tive",
+    "tive-create": "bin/tive-create",
+    "tive-git": "bin/tive-git"
   },
   "scripts": {
-    "create": "node ./bin/tive-create.js",
-    "git": "node ./bin/tive-git.js"
+    "create": "node bin/tive-create",
+    "git": "node bin/tive-git"
   },
   "repository": {
     "type": "git",
