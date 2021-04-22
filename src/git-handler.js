@@ -1,11 +1,17 @@
 const chalk = require('chalk');
+const ora = require('ora')
 const ExecAsync = require('../src/exec-async')
-const log = require('./log')
-let time = Date.now()
+// const log = require('./log')
+const time = Date.now()
+const spinner = ora({
+    text: `${chalk.bgWhiteBright(' Doing ... ')}`,
+    color: "green",
+})
 /*
 * git push
 * */
 exports.push = (data) => {
+    spinner.start()
     ExecAsync('git status').then(res => {
         return ExecAsync('git fetch')
     }).then(res=>{
@@ -16,7 +22,11 @@ exports.push = (data) => {
         return ExecAsync(`git push origin ${data.branch}`)
     }).catch(err => {
         // console.log(err)
+        spinner.text = `${chalk.red.bgWhite(' Run failed ')}`
+        spinner.fail();
     }).finally(()=>{
+        spinner.text = `${chalk.greenBright.bgCyan(' Run succeed ')}`
+        spinner.succeed()
         console.log(`\n${chalk.bgGreen(' DONE ')} ${chalk.green(`End of shell script in ${getTime()}ms`)}`)
     })
 }
@@ -25,6 +35,7 @@ exports.push = (data) => {
 * git merge
 * */
 exports.merge = (data) => {
+    spinner.start()
     ExecAsync('git status').then(res => {
         return ExecAsync('git fetch')
     }).then(res=>{
@@ -42,8 +53,12 @@ exports.merge = (data) => {
     }).then(res=>{
         return ExecAsync(`git ck ${data.branch}`)
     }).catch(err => {
-        console.log(err)
+        // console.log(err)
+        spinner.text = `${chalk.red.bgWhite(' Run failed ')}`
+        spinner.fail();
     }).finally(()=>{
+        spinner.text = `${chalk.greenBright.bgCyan(' Run succeed ')}`
+        spinner.succeed()
         console.log(`${chalk.bgGreen(' DONE ')} ${chalk.green(`End of shell script in ${getTime()}ms`)}`)
     })
 }
