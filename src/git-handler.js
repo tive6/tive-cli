@@ -20,13 +20,14 @@ exports.push = (data) => {
         return ExecAsync(`git commit -m "${data.commit}"`)
     }).then(res=>{
         return ExecAsync(`git push origin ${data.branch}`)
+    }).then(res=>{
+        spinner.text = `${chalk.greenBright.bgCyan(' Run successfully ')}`
+        spinner.succeed()
     }).catch(err => {
         // console.log(err)
         spinner.text = `${chalk.red.bgWhite(' Run failed ')}`
         spinner.fail();
     }).finally(()=>{
-        spinner.text = `${chalk.greenBright.bgCyan(' Run successfully ')}`
-        spinner.succeed()
         console.log(`\n${chalk.bgGreen(' DONE ')} ${chalk.green(`End of shell script in ${getTime()}ms`)}`)
     })
 }
@@ -52,13 +53,14 @@ exports.merge = (data) => {
         return ExecAsync(`git push origin ${data.target}`)
     }).then(res=>{
         return ExecAsync(`git ck ${data.branch}`)
+    }).then(res=>{
+        spinner.text = `${chalk.greenBright.bgCyan(' Run successfully ')}`
+        spinner.succeed()
     }).catch(err => {
         // console.log(err)
         spinner.text = `${chalk.red.bgWhite(' Run failed ')}`
         spinner.fail();
     }).finally(()=>{
-        spinner.text = `${chalk.greenBright.bgCyan(' Run successfully ')}`
-        spinner.succeed()
         console.log(`${chalk.bgGreen(' DONE ')} ${chalk.green(`End of shell script in ${getTime()}ms`)}`)
     })
 }
