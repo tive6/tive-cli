@@ -1,5 +1,5 @@
-const { exec, exit } = require('shelljs');
-const chalk = require('chalk');
+const { exec } = require('shelljs')
+const chalk = require('chalk')
 
 const execAsync = (command)=>{
     return new Promise((resolve, reject) =>{
@@ -12,7 +12,6 @@ ${chalk.redBright(`┍-------------------- ${command} --------------------┑`)}
 [output]=> \n${chalk.redBright(err)}
 ${chalk.redBright(`┕-------------------- ${command} --------------------┙`)}`))
                 reject(0)
-                // exit(1)
             } else {
                 console.log(chalk.cyan(`
 ${chalk.cyanBright(`┍-------------------- ${command} --------------------┑`)}\n

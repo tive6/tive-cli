@@ -10,7 +10,6 @@ const { v1 } = require('uuid')
 const download = require('download-git-repo')
 const ora = require('ora')
 const rm = require('rimraf').sync
-// const shell = require('shelljs')
 const chalk = require('chalk')
 const copy = require('copy')
 const log = require('../src/log')
