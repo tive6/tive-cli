@@ -1,14 +1,15 @@
 {
   "name": "tive-cli",
-  "version": "1.0.8",
-  "description": "基于vue脚手架的npm模板工具",
+  "version": "1.1.0",
+  "description": "基于node和npm的命令行工具集",
   "bin": {
     "tive": "bin/tive.js",
     "tive-create": "bin/tive-create.js",
     "tive-git": "bin/tive-git.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "create": "node ./bin/tive-create.js",
+    "git": "node ./bin/tive-git.js"
   },
   "repository": {
     "type": "git",
@@ -40,7 +41,6 @@
     "pacote": "^11.2.7",
     "rimraf": "^3.0.2",
     "semver": "^7.3.5",
-    "shell": "^0.8.3",
     "shelljs": "^0.8.4",
     "spinner": "^0.3.4",
     "uuid": "^8.3.2"
