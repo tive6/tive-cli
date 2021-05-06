@@ -1,8 +1,8 @@
 # tive-cli
 >基于`node和npm`的命令行工具集
->>基于`vue`脚手架的npm模板工具
+>>1、基于`vue`脚手架的npm模板工具
 > 
->>基于`shelljs`的`Git`自动化工具
+>>2、基于`shelljs`的`Git`自动化工具
 
 
 ### 安装

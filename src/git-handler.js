@@ -23,7 +23,7 @@ exports.push = (data) => {
     }).then(res=>{
         return ExecAsync(`git status`)
     }).then(res=>{
-        spinner.text = `${chalk.greenBright.bgCyan(' Run successfully ')}`
+        spinner.text = `${chalk.greenBright.bgBlueBright(' Run successfully ')}`
         spinner.succeed()
     }).catch(err => {
         spinner.text = `${chalk.red.bgWhite(' Run failed ')}`
@@ -39,25 +39,25 @@ exports.push = (data) => {
 exports.merge = (data) => {
     spinner.start()
     ExecAsync('git status').then(res => {
-    //     return ExecAsync('git add .')
-    // }).then(res=>{
-    //     return ExecAsync(`git commit -m "${data.commit}"`)
-    // }).then(res=>{
-    //     return ExecAsync(`git pull origin ${data.branch}`)
-    // }).then(res=>{
-    //     return ExecAsync(`git checkout ${data.target}`)
-    // }).then(res=>{
-    //     return ExecAsync(`git pull origin ${data.target}`)
-    // }).then(res=>{
-    //     return ExecAsync(`git merge --no-ff -m "${data.branch} ${data.commit} merge into ${data.target}" ${data.branch}`)
-    // }).then(res=>{
-    //     return ExecAsync(`git push origin ${data.target}`)
-    // }).then(res=>{
-    //     return ExecAsync(`git checkout ${data.branch}`)
-    // }).then(res=>{
-    //     return ExecAsync(`git status`)
-    // }).then(res=>{
-        spinner.text = `${chalk.greenBright.bgCyan(' Run successfully ')}`
+        return ExecAsync('git add .')
+    }).then(res=>{
+        return ExecAsync(`git commit -m "${data.commit}"`)
+    }).then(res=>{
+        return ExecAsync(`git pull origin ${data.branch}`)
+    }).then(res=>{
+        return ExecAsync(`git checkout ${data.target}`)
+    }).then(res=>{
+        return ExecAsync(`git pull origin ${data.target}`)
+    }).then(res=>{
+        return ExecAsync(`git merge --no-ff -m "${data.branch} ${data.commit} merge into ${data.target}" ${data.branch}`)
+    }).then(res=>{
+        return ExecAsync(`git push origin ${data.target}`)
+    }).then(res=>{
+        return ExecAsync(`git checkout ${data.branch}`)
+    }).then(res=>{
+        return ExecAsync(`git status`)
+    }).then(res=>{
+        spinner.text = `${chalk.greenBright.bgBlueBright(' Run successfully ')}`
         spinner.succeed()
     }).catch(err => {
         spinner.text = `${chalk.red.bgWhite(' Run failed ')}`
