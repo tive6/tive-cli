@@ -7,10 +7,15 @@ const spinner = ora({
     text: `${chalk.cyan.bgYellowBright(' Doing ... ')}`,
     color: "green",
 })
+
+function getTime() {
+    return Date.now() - time
+}
+
 /*
 * git push
 * */
-exports.push = (data) => {
+const push = (data) => {
     spinner.start()
     ExecAsync('git status').then(res => {
         return ExecAsync('git add .')
@@ -36,7 +41,7 @@ exports.push = (data) => {
 /*
 * git merge
 * */
-exports.merge = (data) => {
+const merge = (data) => {
     spinner.start()
     ExecAsync('git status').then(res => {
         return ExecAsync('git add .')
@@ -67,7 +72,32 @@ exports.merge = (data) => {
     })
 }
 
+/*
+* custom git configuration
+* */
+const runShell = (list, index=0) => {
+    let len = list.length
+    if (index === 0) {
+        spinner.start()
+    }
+    if (index < len) {
+        ExecAsync(list[index]).then(res => {
+            if (index === len-1) {
+                spinner.text = `${chalk.greenBright.bgBlueBright(' Run successfully ')}`
+                spinner.succeed()
+                console.log(`\n${chalk.bgGreen(' DONE ')} ${chalk.green(`End of shell script in ${getTime()}ms`)}`)
+            }
+            runShell(list, ++index)
+        }).catch(err => {
+            spinner.text = `${chalk.red.bgWhite(' Run failed ')}`
+            spinner.fail()
+            console.log(`\n${chalk.bgGreen(' DONE ')} ${chalk.green(`End of shell script in ${getTime()}ms`)}`)
+        })
+    }
+}
 
-function getTime() {
-    return Date.now() - time
+module.exports = {
+    push,
+    merge,
+    runShell,
 }
