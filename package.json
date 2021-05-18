@@ -1,6 +1,6 @@
 {
   "name": "tive-cli",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "基于node和npm的命令行工具集",
   "bin": {
     "tive": "bin/tive",
@@ -10,7 +10,7 @@
   "scripts": {
     "create": "node bin/tive-create",
     "git": "node bin/tive-git",
-    "git:c": "node bin/tive-git -c ./tive.config.js"
+    "git:c": "node bin/tive-git -c tive.git.config.js"
   },
   "repository": {
     "type": "git",

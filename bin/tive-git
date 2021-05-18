@@ -11,7 +11,7 @@ program
     // .usage('<command> [options]')
     .option('-b, --branch <type>', 'current branch')
     .option('-t, --target <type>', 'merged branch')
-    .option('-m, --commit <type> []', 'commit description')
+    .option('-m, --commit <type>', 'commit description')
     .option('-c, --config <type>', 'custom git configuration')
     .option('-h, --help', 'view help information')
     .parse(process.argv)

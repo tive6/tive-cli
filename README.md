@@ -18,15 +18,16 @@ $ tive create <project-name>
 $ tive git <options>
 ```
 
-示例:
+示例：
 
 ```
-$ tive create my-project
+$ tive create my-project                # 当前目录生成
 
-$ tive create .     # 当前目录生成
+$ tive create .                         # 当前目录生成
 
-$ tive git -b master -m "push"      # push代码到远程
-$ tive git -b dev -t test -m "push"      # 开发分支合并到测试分支并提交 
+$ tive git -b master -m "push"          # push代码到远程
+$ tive git -b dev -t test -m "push"     # 开发分支合并到测试分支并提交 
+$ tive git -c ./tive.git.config.js      # 顺序执行自定义组合git命令
 ```
 
 ### 基本命令
@@ -37,3 +38,23 @@ $ tive git -b dev -t test -m "push"      # 开发分支合并到测试分支并�
 * `tive git` or `tive git -h` --- 查看 tive git 的帮助信息
 * `tive git -b [current branch] -m [commit description]`
 * `tive git -b [current branch] -t [merged branch] -m [commit description]`
+* `tive git -c [git config]`
+
+#### git配置文件
+
+*提示*：git命令顺序执行
+
+目录：和`package.json`同级
+
+示例：`tive.git.config.js`
+
+```javascript
+module.exports = {
+    shell: [
+        'git status',
+        'git add .',
+        'git commit -m "commit description"',
+        'git push origin master',
+    ]
+}
+```
