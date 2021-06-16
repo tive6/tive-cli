@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-"use strict";
+'use strict'
 
 const path = require('path')
 const { Command } = require('commander')
@@ -7,35 +7,34 @@ const { push, merge, runShell } = require('../src/git-handler')
 
 const program = new Command()
 program
-    .name('tive git')
-    // .usage('<command> [options]')
-    .option('-b, --branch <type>', 'current branch')
-    .option('-t, --target <type>', 'merged branch')
-    .option('-m, --commit <type>', 'commit description')
-    .option('-c, --config <type>', 'custom git configuration')
-    .option('-h, --help', 'view help information')
-    .parse(process.argv)
+  .name('tive git')
+  // .usage('<command> [options]')
+  .option('-b, --branch <type>', 'current branch')
+  .option('-t, --target <type>', 'merged branch')
+  .option('-m, --commit <type>', 'commit description')
+  .option('-c, --config <type>', 'custom git configuration')
+  .option('-h, --help', 'view help information')
+  .parse(process.argv)
 
 const options = program.opts()
 // console.log(options)
 // const args = program.args
 // console.log(args)
 
-if (options.help ||  (!options.branch && !options.config)) {
-    program.help()
+if (options.help || (!options.branch && !options.config)) {
+  program.help()
 }
 
 if (options && options.config) {
-    let configPath = path.resolve(process.cwd(), options.config)
-    // console.log(configPath)
-    let {shell} = require(configPath)
-    // console.log(shell)
-    runShell(shell)
+  let configPath = path.resolve(process.cwd(), options.config)
+  // console.log(configPath)
+  let { shell } = require(configPath)
+  // console.log(shell)
+  runShell(shell)
 } else {
-    if (options && options.target) {
-        merge(options)
-    } else {
-        push(options)
-    }
+  if (options && options.target) {
+    merge(options)
+  } else {
+    push(options)
+  }
 }
-
