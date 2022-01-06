@@ -5,14 +5,14 @@
 >>2、基于`shelljs`的`Git`自动化工具
 
 
-### 安装
+## 安装
 tive-cli 依赖 [Node.js](https://nodejs.org/en/) (>=7.x)：
 
 ```
 $ npm install tive-cli -g
 ```
 
-### 用法
+## 用法
 ```
 $ tive create <project-name>
 $ tive git <options>
@@ -21,7 +21,7 @@ $ tive git <options>
 示例：
 
 ```
-$ tive create my-project                # 当前目录生成
+$ tive create my-project                # 自定义目录生成
 
 $ tive create .                         # 当前目录生成
 
@@ -30,7 +30,7 @@ $ tive git -b dev -t test -m "push"     # 开发分支合并到测试分支并�
 $ tive git -c ./tive.git.config.js      # 顺序执行自定义组合git命令
 ```
 
-### 基本命令
+## 基本命令
 
 * `tive` or `tive -h` --- 查看 tive 的帮助信息
 * `tive create` or `tive create -h` --- 查看 tive create 的帮助信息
@@ -40,7 +40,7 @@ $ tive git -c ./tive.git.config.js      # 顺序执行自定义组合git命令
 * `tive git -b [current branch] -t [merged branch] -m [commit description]`
 * `tive git -c [git config]`
 
-#### git配置文件
+### git配置文件
 
 *提示*：git命令顺序执行
 
@@ -58,3 +58,7 @@ module.exports = {
     ]
 }
 ```
+
+## 在线文档
+
+* 详见：[基于node和npm的命令行工具——tive-cli](https://tiven.cn/p/d85f4546/ "天問博客") 
